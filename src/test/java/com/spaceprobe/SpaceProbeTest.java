@@ -11,11 +11,17 @@ public class SpaceProbeTest extends TestCase {
 	
 	@Test
 	public void testCreateSondaOnInitialPosition(){
-		
-		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y);
+		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.NORTH);
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
-		
+	}
+	
+	@Test
+	public void testCreateSondaOnInitialPositionAndInitialDirection(){
+		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH);
+		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
+		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
+		assertEquals(spaceProbe.getDirection(), Direction.SOUTH);
 	}
 
 }
