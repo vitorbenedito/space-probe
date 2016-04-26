@@ -3,7 +3,7 @@ package com.spaceprobe;
 public class SpaceProbe {
 	
 	private final Position position;
-	private final Direction direction;
+	private Direction direction;
 	
 	private SpaceProbe(Position position, Direction direction) {
 		this.position = position;
@@ -12,6 +12,15 @@ public class SpaceProbe {
 	
 	public static SpaceProbe fromInitialPosition(int x, int y, Direction direction){
 		return new SpaceProbe( new Position(x,y), direction);
+	}
+	
+	public SpaceProbe turnSpaceProbe(Turn turn){
+		
+		if(turn.equals(turn.LEFT) && direction.equals(Direction.SOUTH)){
+			direction = Direction.EAST;
+		}
+		
+		return this;
 	}
 	
 	public Position getPosition(){
