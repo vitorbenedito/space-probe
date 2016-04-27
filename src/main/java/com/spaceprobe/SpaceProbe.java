@@ -10,7 +10,9 @@ public class SpaceProbe {
 		this.direction = direction;
 	}
 	
-	public static SpaceProbe fromInitialPosition(int x, int y, Direction direction){
+	public static SpaceProbe start(int x, int y, Direction direction){
+		System.out.println( "Start position x,y: " + x + "," + y );
+		System.out.println( "Start direction: " + direction );
 		return new SpaceProbe( new Position(x,y), direction);
 	}
 	
@@ -26,6 +28,8 @@ public class SpaceProbe {
 			case EAST: direction = direction.NORTH; 
 						break;
 		}
+		
+		System.out.println( "Turn to the left: " + direction);
 
 		return this;
 	}
@@ -42,6 +46,8 @@ public class SpaceProbe {
 			case WEST: direction = direction.NORTH; 
 						break;
 		}
+		
+		System.out.println( "Turn to the right: " + direction);
 
 		return this;
 
@@ -51,6 +57,8 @@ public class SpaceProbe {
 		
 		position.setX( position.getX() + direction.getX() );
 		position.setY( position.getY() + direction.getY() );
+		
+		System.out.println( "Move to the direction: " + direction + ", position x,y: " + position.getX() + "," + position.getY() );
 		
 		return this;
 	}
