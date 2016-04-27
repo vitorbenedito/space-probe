@@ -2,7 +2,7 @@ package com.spaceprobe;
 
 public enum Direction {
 
-	NORTH(0,1), SOUTH(0,-1), EAST(1,0), WEST(-1,0);
+	N(0,1), S(0,-1), E(1,0), W(-1,0);
 	
 	private Integer x;
 	private Integer y;

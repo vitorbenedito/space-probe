@@ -11,58 +11,58 @@ public class SpaceProbeTest extends TestCase {
 	
 	@Test
 	public void testCreateSondaOnInitialPosition(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.NORTH);
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.N);
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
 	}
 	
 	@Test
 	public void testCreateSondaOnInitialPositionAndInitialDirection(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH);
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.S);
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
-		assertEquals(spaceProbe.getDirection(), Direction.SOUTH);
+		assertEquals(spaceProbe.getDirection(), Direction.S);
 	}
 	
 	@Test
 	public void testTurnSondaToTheLeft(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH)
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.S)
 										  .turnLeft();
 		
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
-		assertEquals(spaceProbe.getDirection(), Direction.EAST);
+		assertEquals(spaceProbe.getDirection(), Direction.E);
 	}
 	
 	@Test
 	public void testTurnSondaToTheRight(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH)
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.S)
 										  .turnRight();
 		
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
-		assertEquals(spaceProbe.getDirection(), Direction.WEST);
+		assertEquals(spaceProbe.getDirection(), Direction.W);
 	}
 	
 	@Test
 	public void testTurnToTheAllDirections(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH);
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.S);
 		
-		assertEquals(spaceProbe.turnRight().getDirection(), Direction.WEST);
-		assertEquals(spaceProbe.turnRight().getDirection(), Direction.NORTH);
-		assertEquals(spaceProbe.turnRight().getDirection(), Direction.EAST);
-		assertEquals(spaceProbe.turnRight().getDirection(), Direction.SOUTH);
+		assertEquals(spaceProbe.turnRight().getDirection(), Direction.W);
+		assertEquals(spaceProbe.turnRight().getDirection(), Direction.N);
+		assertEquals(spaceProbe.turnRight().getDirection(), Direction.E);
+		assertEquals(spaceProbe.turnRight().getDirection(), Direction.S);
 		
-		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.EAST);
-		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.NORTH);
-		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.WEST);
-		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.SOUTH);
+		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.E);
+		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.N);
+		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.W);
+		assertEquals(spaceProbe.turnLeft().getDirection(), Direction.S);
 
 	}
 	
 	@Test
 	public void testMoveAheadToSouth(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH).move();
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.S).move();
 		
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y - 1);
@@ -70,7 +70,7 @@ public class SpaceProbeTest extends TestCase {
 	
 	@Test
 	public void testMoveAheadToAllDirections(){
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH).move();
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.S).move();
 
 		assertEquals(spaceProbe.getPosition().getX(), 1);
 		assertEquals(spaceProbe.getPosition().getY(), 2);
@@ -94,7 +94,7 @@ public class SpaceProbeTest extends TestCase {
 	@Test
 	public void testSendCommandToProbe(){
 		
-		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.NORTH);
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.N);
 		
 		spaceProbe.sendCommand("L");
 		spaceProbe.sendCommand("R");
