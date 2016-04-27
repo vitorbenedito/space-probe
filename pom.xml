@@ -5,6 +5,7 @@
   <groupId>com</groupId>
   <artifactId>spaceprobe</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   
   <name>spaceprobe</name>
   <url>http://maven.apache.org</url>

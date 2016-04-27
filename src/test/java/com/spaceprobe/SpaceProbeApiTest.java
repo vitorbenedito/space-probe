@@ -1,10 +1,12 @@
 package com.spaceprobe;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
 import junit.framework.TestCase;
 
+@Ignore
 public class SpaceProbeApiTest extends TestCase {
 
     private final RestTemplate restTemplate = new RestTemplate();
