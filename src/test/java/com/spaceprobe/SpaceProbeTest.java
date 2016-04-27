@@ -91,4 +91,18 @@ public class SpaceProbeTest extends TestCase {
 		assertEquals(spaceProbe.getPosition().getY(), 3);
 	}
 	
+	@Test
+	public void testSendCommandToProbe(){
+		
+		SpaceProbe spaceProbe = SpaceProbe.start(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.NORTH);
+		
+		spaceProbe.sendCommand("L");
+		spaceProbe.sendCommand("R");
+		spaceProbe.sendCommand("M");
+		
+		assertEquals(spaceProbe.getPosition().getX(), 1);
+		assertEquals(spaceProbe.getPosition().getY(), 4);
+		
+	}
+	
 }

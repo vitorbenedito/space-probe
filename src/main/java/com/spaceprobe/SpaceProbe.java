@@ -63,6 +63,22 @@ public class SpaceProbe {
 		return this;
 	}
 	
+	public void sendCommand(String command) {
+		
+		System.out.println("Command: " + command);
+		
+		if(command.equals( "L" )){
+			turnLeft();
+		}else if(command.equals("R")){
+			turnRight();
+		}else if(command.equals("M")){
+			move();
+		}
+		
+		System.out.println(position.getX() + " " + position.getY() + " " + direction);
+
+	}
+	
 	public Position getPosition(){
 		return position;
 	}
