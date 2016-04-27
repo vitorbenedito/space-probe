@@ -53,9 +53,10 @@ MMRMMRMRRM
 
 Para socluionar o problema foi primeiramente implementado a lógica da Sonda. Que basicamente é definir onde ela está inicialmente, girar e movimentar a sonda no planalto.
 Depois foi implementado a lógica que recebe as coordenadas (NASA), e envia para a sonda que executa os comandos.
-A implementação da solução foi coberta por testes unitários, e inclusão de logs que auxiliaram no desenvolvimento.
+A implementação dessa lógica foi coberta por testes unitários, e inclusão de logs que auxiliaram no desenvolvimento.
 
-Com a lógica funcionando de forma correta, foi implentado os serviços REST que cria as sondas, carrega todas as sondas e carrega uma sonda específica.
+Com a lógica funcionando de forma correta, foi implentado os serviços REST que cria as sondas, carrega todas as sondas e carrega uma sonda específica. Também foi utilizado injeção de depêndencia, criando um objeto com o escopo singleton, mantendo as sondas já criadas armazenadas em tempo de execução.
+Foi implementado também um test de API simples, que valida o funcionamento dos resources.
 
 A stack utlizada foi Spring Boot, Spring MVC, JUnit e Log4j.
 
