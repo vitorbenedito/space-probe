@@ -60,6 +60,12 @@ public class SpaceProbeTest extends TestCase {
 
 	}
 	
+	@Test
+	public void testMoveAheadToSouth(){
+		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH).move();
+		
+		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X + 1);
+		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
+	}
 	
-
 }

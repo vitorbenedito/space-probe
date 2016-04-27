@@ -1,6 +1,5 @@
 package com.spaceprobe;
 
-
 public class SpaceProbe {
 	
 	private final Position position;
@@ -46,6 +45,14 @@ public class SpaceProbe {
 
 		return this;
 
+	}
+	
+	public SpaceProbe move(){
+		if(direction.equals(direction.SOUTH)){
+			position.setX( position.getX() + 1  );
+		}
+		
+		return this;
 	}
 	
 	public Position getPosition(){
