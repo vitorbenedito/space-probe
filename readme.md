@@ -60,7 +60,7 @@ Foi implementado também um test de API simples, que valida o funcionamento dos 
 
 A stack utlizada foi Spring Boot, Spring MVC, JUnit e Log4j.
 
-O deploy da aplicação foi realizado em um AWS Elastic Beanstalk.
+O deploy da aplicação foi realizado em um AWS Elastic Beanstalk, através de um war. Também foi necessário criar uma classe no projeto MyBootWebApp.class. Necessário para o ESB identificar o Application.class que faz o start da aplicação com spring-boot.
 
 ### Resources
 
