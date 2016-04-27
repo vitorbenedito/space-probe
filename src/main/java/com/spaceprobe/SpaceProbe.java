@@ -14,10 +14,19 @@ public class SpaceProbe {
 		return new SpaceProbe( new Position(x,y), direction);
 	}
 	
-	public SpaceProbe turnSpaceProbe(Turn turn){
+	public SpaceProbe turnLeft(){
 		
-		if(turn.equals(turn.LEFT) && direction.equals(Direction.SOUTH)){
+		if(direction.equals(Direction.SOUTH)){
 			direction = Direction.EAST;
+		}
+		
+		return this;
+	}
+	
+	public SpaceProbe turnRight(){
+		
+		if(direction.equals(Direction.SOUTH)){
+			direction = Direction.WEST;
 		}
 		
 		return this;

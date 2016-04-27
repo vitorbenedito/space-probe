@@ -27,11 +27,21 @@ public class SpaceProbeTest extends TestCase {
 	@Test
 	public void testTurnSondaToTheLeft(){
 		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH)
-										  .turnSpaceProbe(Turn.LEFT);
+										  .turnLeft();
 		
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
 		assertEquals(spaceProbe.getDirection(), Direction.EAST);
+	}
+	
+	@Test
+	public void testTurnSondaToTheRight(){
+		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH)
+										  .turnRight();
+		
+		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X);
+		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
+		assertEquals(spaceProbe.getDirection(), Direction.WEST);
 	}
 
 }
