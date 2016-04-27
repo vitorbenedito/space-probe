@@ -63,7 +63,6 @@ LMLMLMLMM
 MMRMMRMRRM
 
 Response:
-json
 [
   {
     "id": "24abe96a-5141-4a68-8c1c-851d6d96d49d",
@@ -88,7 +87,6 @@ json
 GET http://space-probe.sa-east-1.elasticbeanstalk.com/spaceprobe
 
 Response:
-json
 [
   {
     "id": "24abe96a-5141-4a68-8c1c-851d6d96d49d",
@@ -113,7 +111,6 @@ json
 GET http://space-probe.sa-east-1.elasticbeanstalk.com/spaceprobe/24abe96a-5141-4a68-8c1c-851d6d96d49d
 
 Response:
-json
 [
   {
     "id": "24abe96a-5141-4a68-8c1c-851d6d96d49d",
