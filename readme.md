@@ -53,6 +53,7 @@ MMRMMRMRRM
 
 Para socluionar o problema foi primeiramente implementado a lógica da Sonda. Que basicamente é definir onde ela está inicialmente, girar e movimentar a sonda no planalto.
 Depois foi implementado a lógica que recebe as coordenadas (NASA), e envia para a sonda que executa os comandos.
+A implementação da solução foi coberta por testes unitários, e inclusão de logs que auxiliaram no desenvolvimento.
 
 Com a lógica funcionando de forma correta, foi implentado os serviços REST que cria as sondas, carrega todas as sondas e carrega uma sonda específica.
 
