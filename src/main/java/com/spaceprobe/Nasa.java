@@ -1,6 +1,6 @@
 package com.spaceprobe;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +10,7 @@ public class Nasa {
 	
 	private static final Logger logger = Logger.getLogger(Nasa.class);
 	
-	private Map<String, SpaceProbe> spaceProbeMap = new HashMap<String, SpaceProbe>();
+	private Map<String, SpaceProbe> spaceProbeMap = new LinkedHashMap<String, SpaceProbe>();
 	
 	public void launchSpaceProbeWithCoordanates(List<List<String>> coordanates){
 		
