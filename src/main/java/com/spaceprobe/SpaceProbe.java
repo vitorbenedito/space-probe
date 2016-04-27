@@ -1,5 +1,6 @@
 package com.spaceprobe;
 
+
 public class SpaceProbe {
 	
 	private final Position position;
@@ -16,20 +17,35 @@ public class SpaceProbe {
 	
 	public SpaceProbe turnLeft(){
 		
-		if(direction.equals(Direction.SOUTH)){
-			direction = Direction.EAST;
+		switch (direction) {
+			case NORTH: direction = direction.WEST; 
+						break;
+			case WEST: direction = direction.SOUTH; 
+						break;
+			case SOUTH: direction = direction.EAST; 
+						break;
+			case EAST: direction = direction.NORTH; 
+						break;
 		}
-		
+
 		return this;
 	}
 	
 	public SpaceProbe turnRight(){
 		
-		if(direction.equals(Direction.SOUTH)){
-			direction = Direction.WEST;
+		switch (direction) {
+			case NORTH: direction = direction.EAST; 
+						break;
+			case EAST: direction = direction.SOUTH; 
+						break;
+			case SOUTH: direction = direction.WEST; 
+						break;
+			case WEST: direction = direction.NORTH; 
+						break;
 		}
-		
+
 		return this;
+
 	}
 	
 	public Position getPosition(){
