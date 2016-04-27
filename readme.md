@@ -60,7 +60,7 @@ A stack utlizada foi Spring Boot, Spring MVC, JUnit e Log4j.
 
 O deploy da aplicação foi realizado em um AWS Elastic Beanstalk.
 
-# Resources
+### Resources
 
 ```
 POST http://space-probe.sa-east-1.elasticbeanstalk.com/spaceprobe
