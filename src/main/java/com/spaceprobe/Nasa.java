@@ -1,18 +1,21 @@
 package com.spaceprobe;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Nasa {
 	
 	private static final Logger logger = Logger.getLogger(Nasa.class);
 	
 	private Map<String, SpaceProbe> spaceProbeMap = new LinkedHashMap<String, SpaceProbe>();
 	
-	public void launchSpaceProbeWithCoordanates(List<List<String>> coordanates){
+	public Nasa launchSpaceProbeWithCoordanates(List<List<String>> coordanates){
 		
 		String probeId = null;
 		
@@ -41,10 +44,16 @@ public class Nasa {
 			}
 		}
 		
+		return this;
+		
 	}
 
 	public Map<String, SpaceProbe> getSpaceProbeMap() {
 		return spaceProbeMap;
+	}
+	
+	public List<SpaceProbe> getSpaceProbes() {
+		return new ArrayList<SpaceProbe>(spaceProbeMap.values());
 	}
 
 	public void setSpaceProbeMap(Map<String, SpaceProbe> spaceProbeMap) {
