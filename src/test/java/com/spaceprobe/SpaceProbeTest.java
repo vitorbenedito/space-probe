@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 public class SpaceProbeTest extends TestCase {
 	
 	private static final int INITIAL_POSITION_X = 1;
-	private static final int INITIAL_POSITION_Y = 10;
+	private static final int INITIAL_POSITION_Y = 3;
 	
 	@Test
 	public void testCreateSondaOnInitialPosition(){
@@ -66,6 +66,35 @@ public class SpaceProbeTest extends TestCase {
 		
 		assertEquals(spaceProbe.getPosition().getX(), INITIAL_POSITION_X + 1);
 		assertEquals(spaceProbe.getPosition().getY(), INITIAL_POSITION_Y);
+	}
+	
+	@Test
+	public void testMoveAheadToAllDirections(){
+		SpaceProbe spaceProbe = SpaceProbe.fromInitialPosition(INITIAL_POSITION_X, INITIAL_POSITION_Y, Direction.SOUTH).move();
+		
+		int x = INITIAL_POSITION_X + 1;
+		int y = INITIAL_POSITION_Y;
+		
+		assertEquals(spaceProbe.getPosition().getX(), x);
+		assertEquals(spaceProbe.getPosition().getY(), y);
+		
+		spaceProbe.turnRight().move();
+		y = y - 1;
+		
+		assertEquals(spaceProbe.getPosition().getX(), x);
+		assertEquals(spaceProbe.getPosition().getY(), y);
+		
+		spaceProbe.turnRight().move();
+		x = x - 1;
+		
+		assertEquals(spaceProbe.getPosition().getX(), x);
+		assertEquals(spaceProbe.getPosition().getY(), y);
+		
+		spaceProbe.turnRight().move();
+		y = y + 1;
+		
+		assertEquals(spaceProbe.getPosition().getX(), x);
+		assertEquals(spaceProbe.getPosition().getY(), y);
 	}
 	
 }

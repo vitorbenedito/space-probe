@@ -48,8 +48,16 @@ public class SpaceProbe {
 	}
 	
 	public SpaceProbe move(){
-		if(direction.equals(direction.SOUTH)){
-			position.setX( position.getX() + 1  );
+		
+		switch (direction) {
+			case NORTH: position.setX( position.getX() - 1 );
+						break;
+			case EAST:  position.setY( position.getY() + 1 );
+						break;
+			case SOUTH: position.setX( position.getX() + 1  );
+						break;
+			case WEST:  position.setY( position.getY() - 1 ); 
+						break;
 		}
 		
 		return this;
