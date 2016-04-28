@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.spaceprobe.Nasa;
 import com.spaceprobe.SpaceProbe;
 import com.spaceprobe.controllers.parsers.SpaceProbeParser;
+import com.spaceprobe.services.Nasa;
 
 @Controller
 @RequestMapping("/spaceprobe")

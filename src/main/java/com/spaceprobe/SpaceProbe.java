@@ -3,8 +3,6 @@ package com.spaceprobe;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 public class SpaceProbe {
 	
@@ -13,6 +11,7 @@ public class SpaceProbe {
 	private String id;
 	
 	private final Position position;
+	
 	private Direction direction;
 	
 	private SpaceProbe(Position position, Direction direction, String id) {

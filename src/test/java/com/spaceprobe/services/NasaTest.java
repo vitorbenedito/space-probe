@@ -1,9 +1,15 @@
-package com.spaceprobe;
+package com.spaceprobe.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.spaceprobe.CoordanatesFeature;
+import com.spaceprobe.Direction;
+import com.spaceprobe.Position;
+import com.spaceprobe.SpaceProbe;
+import com.spaceprobe.services.Nasa;
 
 import junit.framework.TestCase;
 

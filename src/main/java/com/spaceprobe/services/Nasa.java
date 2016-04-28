@@ -1,4 +1,4 @@
-package com.spaceprobe;
+package com.spaceprobe.services;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -7,6 +7,9 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
+
+import com.spaceprobe.Direction;
+import com.spaceprobe.SpaceProbe;
 
 @Component
 public class Nasa {

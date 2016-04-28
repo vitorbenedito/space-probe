@@ -1,6 +1,9 @@
-package com.spaceprobe;
+package com.spaceprobe.model;
 
 import org.junit.Test;
+
+import com.spaceprobe.Direction;
+import com.spaceprobe.SpaceProbe;
 
 import junit.framework.TestCase;
 

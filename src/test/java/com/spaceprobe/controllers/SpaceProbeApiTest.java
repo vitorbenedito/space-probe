@@ -1,4 +1,4 @@
-package com.spaceprobe;
+package com.spaceprobe.controllers;
 
 import org.junit.Ignore;
 import org.junit.Test;
