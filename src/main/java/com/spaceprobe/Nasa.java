@@ -22,30 +22,37 @@ public class Nasa {
 		for(List<String> coordanate: coordanates){
 			if(coordanate.size() > 2){
 				if(probeId == null){
-					
-					SpaceProbe probe = SpaceProbe.start( 
-							Integer.parseInt( coordanate.get(0) ), 
-							Integer.parseInt( coordanate.get(1) ), 
-							Direction.valueOf( coordanate.get(2) )
-					);
-					
-					probeId = probe.getId();
-					spaceProbeMap.put(probe.getId(), probe);
-					
+					probeId = startSpaceProbe(coordanate);
 				}else{
-					String actualPosition = "";
-					for(String command: coordanate){
-						SpaceProbe spaceProbe = spaceProbeMap.get(probeId);
-						actualPosition = spaceProbe.sendCommand(command);
-					}
+					sendCommands(probeId, coordanate);
 					probeId = null;
-					logger.info(actualPosition);
 				}	
 			}
 		}
 		
 		return this;
 		
+	}
+
+	private void sendCommands(String probeId, List<String> coordanate) {
+		
+		String actualPosition = "";
+		for(String command: coordanate){
+			SpaceProbe spaceProbe = spaceProbeMap.get(probeId);
+			actualPosition = spaceProbe.sendCommand(command);
+		}
+		logger.info(actualPosition);
+	}
+
+	private String startSpaceProbe(List<String> coordanate) {
+		SpaceProbe probe = SpaceProbe.start( 
+				Integer.parseInt( coordanate.get(0) ), 
+				Integer.parseInt( coordanate.get(1) ), 
+				Direction.valueOf( coordanate.get(2) )
+		);
+		
+		spaceProbeMap.put(probe.getId(), probe);
+		return probe.getId();	
 	}
 
 	public Map<String, SpaceProbe> getSpaceProbeMap() {

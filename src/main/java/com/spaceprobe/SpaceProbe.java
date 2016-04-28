@@ -110,21 +110,4 @@ public class SpaceProbe {
 		this.id = id;
 	}
 	
-	public String toJson(){
-		JSONObject result = new JSONObject();
-		
-		result.put("id", id);
-		
-		JSONObject pos = new JSONObject();
-		pos.put("x", position.getX());
-		pos.put("y", position.getY());
-
-		result.put("postion", pos);
-		
-		result.put("direction", direction);
-		
-		return result.toString().replaceAll("\"", "");
-		
-	}
-	
 }
